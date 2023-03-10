@@ -1,0 +1,777 @@
+
+/* dans la synthèse il est précisé que " pour éviter d’étirer la page sur la largeur de façon excessive, il faut déterminer
+une largeur maximum de 1400 px." */
+#container {
+    max-width: 1440px;
+    min-width: 320px;
+    margin: auto;
+}
+
+body {
+    font-family:'Raleway', sans-serif;
+    background-color:white;
+}
+
+h1 {
+    color: black;
+    font-size: 1.4em;
+    margin: 6px;
+}
+
+h2 {
+    font-size: 1.2em; /*en em*/
+    padding: 15px;
+}
+
+h3 {
+    font-size: 1em; /*en em*/
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+p {
+    font-size: 1em; /*en em*/
+    margin: 10px;
+}
+
+i { /*ici je veux inclure toutes les icones <i>*/
+    color:#0065FC;
+}
+
+/*header*/
+header {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+#logo img {
+    width: 61px;
+    height: 19px;
+    padding-left: 44px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-right: 40px;
+}
+
+
+nav a {
+    color: black;
+    text-decoration: none;  
+    padding-top: 44px;
+}
+
+nav a:hover { /*ligne de survol, au dessus en version desktop, en dessous en version mobile*/
+    border-top: 2px solid #0065FC;
+    color: #0065FC;
+}
+
+
+/*section 1 : Trouvez votre hbrgmnt*/
+#section1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+/*div barrederecherche*/
+
+form { /*correspond aux éléments qui forment la barre de recherche*/
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #F2F2F2;
+    border-radius: 15px;
+    margin-top: 30px; /*influence l'espace entre le p "En plein centre" et la barre de recherche*/
+    margin-bottom: 40px; /*influence l'espace entre la barre et les filtres*/
+    width: 35%; /*permet de définir la largeur de la barre de recherche. Je me suis basée sur la maquette où la fin de la barre arrive à peu près au niveau de "vac"*/
+}
+
+#dotlocation i { /*ici l'icone est noire*/
+    color: black;
+    font-size: 1.3em;
+}
+
+#dotlocation { /*contour de l'icone*/
+    background-color: #F2F2F2;
+    border-radius: 15px 0px 0px 15px;
+    padding: 20px;
+}
+
+input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
+    border: none;
+    font-size: 1.1em;
+    width: 230px;
+    font-weight: bold;
+    padding : 20px;
+    }
+
+/*correspond à "Rechercher".
+ Attention, en version mobile il faut mettre une icone loupe 
+<i class="fa-solid fa-magnifying-glass"></i> à la place du texte "Rechercher"*/
+.buttonresearch {
+    background-color:#0065FC;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius:  0px 15px 15px 0px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+
+    /*partie filtres en lien avec les ul*/
+#filtres {
+    display: flex;
+    flex-direction: row;
+}
+
+.conteneur {
+    display: flex;
+    flex-direction: row;
+}
+
+#filtres ul {
+    list-style-type: none;
+}
+
+ .filtre {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #D9D9D9;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 20px;
+    font-weight: bold;
+ }
+
+ .filtre a {
+    text-decoration: none;
+    color: black;
+ }
+
+ 
+.filtre a:hover {  /*les filtres doivent changer d'apparence au survol*/
+    color: black;
+    background-color: #DEEBFF;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.filtre i {
+    padding-right: 10px;
+}
+
+button {
+    background-color: white;
+    font-size: 1.1em;
+}
+
+
+/*div info (i entouré + indications "plus de 500 logements dispos"*/
+#info {
+    display: flex;
+    flex-direction: row;
+}
+
+#i {
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 25px ;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin: 6px;
+    margin-bottom: 30px;
+}
+
+/*div whereto comprend la section 2 ET l'article*/
+#whereto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1345px;
+    margin-bottom: 60px;
+}
+
+#accomodations, #topofthetop {
+    background: #F2F2F2;
+    border-radius: 20px; /*effet sur les photos dont l'angle est modifié*/
+}
+
+.greystar i {
+    color:#F2F2F2;
+    font-size: 0.8em;
+}
+
+#whereto p {
+    font-size: 0.9em;
+}
+
+/*****section2*****/
+
+#accomodations {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px; /*faut il mettre en % ?????????*/
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+#accomodations h1 {
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+
+#accomodations h2 {
+    margin-left: 20px;
+    margin-top: 18px;
+    
+}
+
+#accomodations a{
+    text-decoration: none;
+    color: black;
+}
+
+#where { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card1 { /*ATTENTION les cards doivent être cliquables dans leur intégralité */
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 20px;
+    border: 5px solid #FFFFFF;
+    background-color: #FFFFFF;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.card1 img { 
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    height: 118px;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8px;
+    margin-bottom: 2px;
+}
+
+.box1 h3 {
+    margin-left: 9px;
+    margin-bottom: 3px;
+    margin-top: 10px;
+
+}
+
+.box1 p {
+    margin-top: 2px;
+}
+
+.stars {
+    font-size: 0.8em;
+    margin-left: 8px;
+}
+
+
+/*****article topofthetop*****/
+
+#topofthetop {
+    max-width: 410px; 
+    display: flex;
+    flex-direction: column;
+}
+
+#increase {
+    display: flex;
+    flex-direction: row;
+    padding-top : 40px;
+    gap: 18%;
+}
+
+#increase h1 {
+    margin-left: 35px;
+}
+
+#increase i {
+    padding-top: 9px;
+}
+
+#bests {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.card2 { /*ATTENTION les cards doivent être cliquables*/
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border: 5px solid #FFFFFF;
+    background-color: #FFFFFF;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 20px;
+    margin: 35px;
+    margin-bottom: 38px;
+}
+
+.bests a {
+    text-decoration: none;
+    color: black;
+}
+
+.comment h3 {
+    margin-left: 6px; 
+    margin-bottom: 2px;
+}
+
+.comment p {
+    margin-left: 7px;
+}
+
+.card2 img { 
+    border-radius:  20px 0px 0px 20px;
+    object-fit: cover;
+    width: 40%;
+    height: 140px;
+}
+
+.box2 {
+    display: flex;
+    flex-direction: column;
+    margin-left:15px;
+    margin-top: 4px;
+}
+
+.stars2 {
+    font-size: 0.8em;
+    padding-bottom: 5px;
+    margin-top: auto; /*permet aux etoiles de prendre l'espace max et donc de se mettre tout en bas*/
+}
+
+/*****section 3 activities*****/
+#section3 {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+}
+
+#section3 h1 {
+    padding-bottom: 20px;
+    margin-left: 60px;
+   
+}
+
+#activities {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-left: 50px;
+    }
+
+.card3 { /*ATTENTION les cards doivent être cliquables*/
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+.card3 img {
+    width: 100%;/*il faut trouver un moyen de le mettre en %*/
+    height: 350px;
+    border-radius: 20px 20px 0 0;
+    
+}
+
+#activities a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.card3 h3 {
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+/*footer*/
+#footer { /*revoir margin et padding*/
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    background-color: #F2F2F2;
+    padding-top: 40px;
+    gap: 15%;
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 40px;
+    margin-bottom: 0;
+    
+   
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+}
+
+.help h4 {
+    margin-left: 40px;
+    margin-bottom: 5px;  
+}
+
+ul {
+    list-style-type: none;
+    font-size: 0.9em;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+
+
+.hide-lg {
+   display: none;
+}
+
+
+
+/*********************************************MEDIA QUERIES****************************************/
+
+/*media queries en lien avec la version tablette (769 à 992px selon l'ancienne version de booki)*/
+@media screen and (min-width: 769px) and (max-width: 992px){
+
+    #whereto {
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+    }
+
+    #accomodations {
+        width: 80%;
+        max-width: 900px;
+        min-width: 650px; 
+        
+    }
+    
+    #topofthetop {
+        width: 90%;
+        max-width: 900px;
+        min-width: 792px; 
+        margin: auto;
+        /*margin-left: 50px;*/
+      }
+    
+    #increase {
+        display: flex;
+        flex-direction: row;
+        padding-top : 40px;
+        gap: 60%;
+    }
+
+    .bests {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card2 {
+        width: 90%;
+        height: 145px;
+        max-width: 250px;
+        min-width: 150px;
+    }
+
+    #activities {
+    margin: 50px auto;
+    width: 100%;
+    max-width: 900px;
+    min-width: 650px;
+    }
+
+    #activities h1 {
+    margin-left: 30px;
+    margin-top: 55px;
+    }
+
+    #section3 h1 {
+    margin: 0;
+    }
+
+    #footer {
+    width: 100%;
+    max-width: 900px;
+    min-width: 650px;
+    }
+}
+
+
+
+
+
+/***********************************  MEDIA QUERIES MOBILE  *************************/
+
+/*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
+
+    /**************** HEADER *********/
+@media screen and (max-width: 768px) { 
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /****** LOGO *****/
+    #logo img {
+        padding-left: 0;
+    }
+
+    /****** NAV *******/
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    nav a {
+        padding-bottom: 20px;
+    }
+
+    /* SOULIGNAGE DU NAV */
+    nav a:hover { /* il est en DESSOUS en version mobile*/
+    color: #0065FC;
+    border-top: none;
+    border-bottom: 2px solid #0065FC;
+    }
+
+    /****** SECTION1 ET BARRE DE RECHERCHE  ****************/
+    #section1 {
+        margin: auto;
+        align-items: center;
+        }
+
+    form { /*Eléments qui forment la barre de recherche dans la version mobile*/
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        align-items: center;
+        }
+
+    #dotlocation { /*contour de l'icone dotlocation*/
+        padding: 15px;
+    }
+    
+    input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
+        border: none;
+        font-size: 1.1em;
+        width: 180px;
+        font-weight: bold;
+        padding : 15px;
+        }
+
+    form { /*correspond aux éléments qui forment la barre de recherche dans la version mobile*/
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .buttonresearch i { /*icone loupe (couleur blanche, fond bleu, radius différent sur mobile ainsi que padding)*/
+        color: white;
+        background-color: #0065FC;
+        border-radius: 0 15px 15px 0;
+        padding: 16px;
+    }
+    
+    /*icone LOUPE à la place de "Recherche" + changement de place topofthetop et accomodations (ordre inversé one/two)*/
+    .hide-md { 
+        display: none;
+    }
+
+    .hide-lg { /*class qui permet de cacher certaines choses en fonction de la taille de l'écran*/
+        display: contents;
+    }
+
+    /****** FILTRES **********/
+    #filtres {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filtre {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.7em;
+        align-items: center;
+    }
+
+    .filtre a {
+        width: 80%;
+        margin: 0;
+    }
+
+    .conteneur { /*DIV qui réuni l'ensemble des filtres et qui va pouvoir être agencée grace à CSS GRIDS*/
+        flex-wrap: wrap;
+    }
+
+    #info {
+        margin-bottom: 20px;
+    }
+
+
+    /* DIV QUI REGROUPE SECTION2 ET ARTICLE */
+    #whereto {
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+    }
+
+     /************************ARTICLE QUI PASSE AVANT LA SECTION2**************************/
+    .two {
+        order: 1;
+        flex: 1;
+    }
+
+    .one {
+        order: 2;
+    }
+
+     #topofthetop {
+        border-radius: 0;
+        margin: 0 auto;
+        max-width: 375px;
+        min-width: 300px;
+        padding-bottom: 30px;
+        }
+
+    .card2 img { 
+        object-fit: cover;
+        width: 30%;
+    }
+
+    #increase h1 {
+        margin-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    #increase {
+        gap: 22%;
+    }
+
+    /************************SECTION2 ACCOMODATIONS*****************************/
+    #where { 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    #accomodations {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 375px;
+    min-width: 320px;
+    background: white;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    }
+
+    #accomodations h1 {
+        margin-top: 35px;
+        margin-left: 0;
+    }
+
+    #accomodations h2 {
+        display: none;
+    }
+
+    .card1 { 
+        width: 97%;
+        height: 199px;
+    }
+
+    .card1 img { 
+        object-fit: cover;
+        width: 100%;
+    }
+    
+
+    /*****************************SECTION3 ACTIVITIES******************************/
+    #section3 {
+        align-items: center;
+    }
+
+    #activities {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 320px;
+    gap: 15px;
+    margin-bottom: 65px;
+    align-items: center;
+    }
+    
+    #section3 h1 {
+        width: 110px;
+        margin-right: 250px;
+    }
+    
+
+    .card3 { /*ATTENTION les cards doivent être cliquables*/
+    width: 97%;
+    padding-bottom: 20px;
+    }
+
+    .card3 img {
+    width: 100%;
+    
+    max-width: 320px;
+    max-height: 124px;
+    }
+
+    /*footer*/  
+    #footer { /*revoir margin et padding*/
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;  
+    margin: 0;
+    padding-left: 0;
+    }
+
+
+}
